@@ -1,0 +1,270 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --main-clr: #008aaa;
+}
+body {
+  background-color: #eee;
+}
+.container {
+  width: 1400px;
+  padding-inline: 15px !important;
+  margin: 0 auto;
+}
+.header {
+  padding: 30px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 25px;
+  color: var(--main-clr);
+  text-decoration: none;
+  font-weight: 800;
+}
+.header .toggle-icon {
+  display: none;
+}
+.header .toggle-icon:hover ~ .navbar {
+  display: block;
+}
+.header .toggle-icon svg {
+  font-size: 30px;
+}
+.navbar {
+  display: flex;
+  gap: 30px;
+}
+.navbar ul{
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+.navbar li.active svg {
+  fill: #d1884f;
+}
+.navbar li svg {
+  width: 18px;
+  transition: 0.3s;
+}
+.navbar li:hover svg {
+  fill: #d1884f;
+}
+.navbar li:hover a {
+  color: #d1884f;
+}
+.navbar a {
+  color: #3bbadb;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+a.active {
+  color: #d1884f;
+}
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-content {
+  max-width: 600px;
+}
+.main-content .text-wrapper {
+  width: 385px;
+}
+.main-content h3 {
+  font-size: 30px;
+  color: #3bbadb;
+  font-weight: 500;
+  overflow: hidden;
+  margin-bottom: 30px;
+  border-right: 0.15em solid orange;
+  white-space: nowrap;
+  letter-spacing: 0.15em;
+  animation: typing 2s steps(18), blink-caret 0.75s step-end infinite;
+}
+.main-content h1 {
+  font-size: 40px;
+  font-weight: 500;
+  color: var(--main-clr);
+}
+.main-content h1 span {
+  color: #d1884f;
+}
+.main-content p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 20px 0 40px;
+}
+.main-content .box {
+  display: flex;
+  gap: 20px;
+}
+.box a {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-self: center;
+  color: var(--main-clr);
+  text-decoration: none;
+  border: 2px solid var(--main-clr);
+  border-radius: 5px;
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  z-index: 1;
+  overflow: hidden;
+  transition: 0.5;
+  padding: 5px 20px;
+}
+
+.box a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--main-clr);
+  z-index: -1;
+  transition: 0.5s;
+}
+.box a:hover {
+  color: #eee;
+}
+.box a:hover::before {
+  width: 100%;
+}
+.pic {
+  display: flex;
+  background-color: #3bbadb;
+  padding: 12px;
+  border-radius: 15px;
+}
+.pic img {
+  border-radius: 10px;
+  width: 500px;
+  height: 100%;
+}
+
+/* Small */
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+  .main-content {
+    max-width: 100%;
+    margin-top:60px;
+  }
+  .navbar ul li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .navbar ul li svg{
+    width: 20px;
+    margin: auto;
+  }
+  .box a {
+    font-size: 15px;
+  }
+  .pic {
+    display: none;
+  }
+  .main-content .text-wrapper {
+    width: 100%;
+  }
+  .main-content h3 {
+    font-size: 23px;
+  }
+.main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1100px;
+  }
+}
+/* Extra Large */
+@media (min-width: 1400px) {
+  .container {
+    width: 1400px;
+  }
+}
+
+@media (max-width: 992px) {
+  .header {
+    position: relative;
+    display: block;
+  }
+  .navbar{
+    display: none;
+  }
+  .navbar ul {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+  }
+  .header .toggle-icon {
+    position: absolute;
+    right: 15px;
+    top: 30px;
+    display: block;
+  }
+  .main.container {
+    flex-direction: column;
+    gap: 60px;
+    padding-top: 0px;
+  }
+  .pic img {
+    width: 380px;
+  }
+  .main-content h3 {
+    margin-bottom: 20px;
+  }
+  .main-content h1 {
+    font-size: 30px;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #d1884f;
+  }
+}
